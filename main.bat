@@ -12,8 +12,14 @@ cd ..
 REM Backend commands
 cd managements
 
+REM Check if venv directory exists
+if not exist venv (
+    echo Creating virtual environment...
+    python -m venv venv
+)
+
 REM Run the backend server in a new command window
-start "DJANGO" cmd /k "cd /d %CD% && if not exist venv (python -m venv venv) && call .\venv\Scripts\activate && pip install -r requirements.txt && call .\venv\Scripts\activate && pip install -r requirements.txt && set PRINTER_URL=http://localhost:3000 && set DB_DEFAULT=postgres && python manage.py runserver 0.0.0.0:8000 && pause"
+start "DJANGO" cmd /k "cd /d %CD% && call .\venv\Scripts\activate && pip install -r requirements.txt && set PRINTER_URL=http://localhost:3000 && set DB_DEFAULT=postgres && python manage.py runserver 0.0.0.0:8000"
 
 REM Navigate back to the main folder
 cd ..
