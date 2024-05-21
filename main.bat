@@ -10,7 +10,7 @@ REM Navigate to the main folder
 cd ..
 
 REM Backend commands
-cd management
+cd managements
 IF NOT EXIST "venv" (
     echo Creating virtual environment...
     python -m venv venv
