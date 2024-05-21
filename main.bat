@@ -41,7 +41,7 @@ set PRINTER_URL=http://localhost:3000
 set DB_DEFAULT=postgres
 
 REM Run the backend server in a new command window
-start "DJANGO" cmd /k "python manage.py runserver 0.0.0.0:8000"
+start "DJANGO" cmd /k "echo Starting backend server... && python manage.py runserver 0.0.0.0:8000 && pause"
 if %ERRORLEVEL% neq 0 (
     set errormessage=Backend server failed to start.
     call :reportError
@@ -59,7 +59,7 @@ if %ERRORLEVEL% neq 0 (
 )
 
 REM Run the frontend server in a new command window
-start "FRONT" cmd /k "npm run serve"
+start "FRONT" cmd /k "echo Starting frontend server... && npm run serve && pause"
 if %ERRORLEVEL% neq 0 (
     set errormessage=Frontend server failed to start.
     call :reportError
@@ -77,7 +77,7 @@ if %ERRORLEVEL% neq 0 (
 )
 
 REM Run the printer service in a new command window
-start "PRINTER" cmd /k "npm run start"
+start "PRINTER" cmd /k "echo Starting printer service... && npm run start && pause"
 if %ERRORLEVEL% neq 0 (
     set errormessage=Printer service failed to start.
     call :reportError
