@@ -21,7 +21,7 @@ cd ..
 REM Frontend commands
 cd frontend
 
-start "FRONT" cmd /k "cd /d %CD% && npm install && if !ERRORLEVEL! neq 0 (echo Failed to install npm packages. && pause && exit /b !ERRORLEVEL!) && npm run serve && pause"
+start "FRONT" cmd /k "cd /d %CD% && npm install && npm run serve"
 
 REM Navigate back to the main folder
 cd ..
@@ -29,7 +29,7 @@ cd ..
 REM Printer service commands
 cd printer-v2
 
-start "PRINTER" cmd /k "cd /d %CD% && npm install && if !ERRORLEVEL! neq 0 (echo Failed to install npm packages for printer service. && pause && exit /b !ERRORLEVEL!) && npm run start && pause"
+start "PRINTER" cmd /k "cd /d %CD% && npm install && npm run start"
 
 REM Navigate back to the main folder
 cd ..
