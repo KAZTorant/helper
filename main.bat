@@ -1,13 +1,5 @@
 @echo off
-setlocal enabledelayedexpansion
 
-REM Function to terminate all services and exit
-:terminate
-    echo Terminating all services...
-    taskkill /FI "WINDOWTITLE eq DJANGO" /T /F >nul 2>&1
-    taskkill /FI "WINDOWTITLE eq FRONT" /T /F >nul 2>&1
-    taskkill /FI "WINDOWTITLE eq PRINTER" /T /F >nul 2>&1
-    exit /b !errorcode!
 
 REM Navigate to the main folder
 cd ..
