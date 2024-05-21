@@ -22,7 +22,7 @@ set PRINTER_URL=http://localhost:3000
 set DB_DEFAULT=postgres
 
 REM Run the backend server
-python manage.py runserver 0.0.0.0:8000
+start python manage.py runserver 0.0.0.0:8000
 
 REM Navigate back to the main folder
 cd ..
@@ -32,7 +32,7 @@ cd frontend
 npm install
 
 REM Run the frontend server
-npm run serve
+start npm run serve
 
 REM Navigate back to the main folder
 cd ..
@@ -42,7 +42,7 @@ cd printer-v2
 npm install
 
 REM Run the printer service
-npm run start
+start npm run start
 
 REM Navigate back to the main folder
 cd ..
