@@ -10,7 +10,7 @@ REM Navigate to the main folder
 cd ..
 
 REM Backend commands
-cd managements
+cd management
 IF NOT EXIST "venv" (
     echo Creating virtual environment...
     python -m venv venv
@@ -40,8 +40,8 @@ REM Set environment variables
 set PRINTER_URL=http://localhost:3000
 set DB_DEFAULT=postgres
 
-REM Run the backend server
-start "DJANGO" python manage.py runserver 0.0.0.0:8000
+REM Run the backend server in a new command window
+start "DJANGO" cmd /c "python manage.py runserver 0.0.0.0:8000"
 if %ERRORLEVEL% neq 0 (
     set errormessage=Backend server failed to start.
     call :reportError
@@ -58,8 +58,8 @@ if %ERRORLEVEL% neq 0 (
     call :reportError
 )
 
-REM Run the frontend server
-start "FRONT" npm run serve
+REM Run the frontend server in a new command window
+start "FRONT" cmd /c "npm run serve"
 if %ERRORLEVEL% neq 0 (
     set errormessage=Frontend server failed to start.
     call :reportError
@@ -76,8 +76,8 @@ if %ERRORLEVEL% neq 0 (
     call :reportError
 )
 
-REM Run the printer service
-start "PRINTER" npm run start
+REM Run the printer service in a new command window
+start "PRINTER" cmd /c "npm run start"
 if %ERRORLEVEL% neq 0 (
     set errormessage=Printer service failed to start.
     call :reportError
