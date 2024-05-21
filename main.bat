@@ -19,7 +19,7 @@ if not exist venv (
 )
 
 REM Run the backend server in a new command window
-start "DJANGO" cmd /k "cd /d %CD% && call .\venv\Scripts\activate && pip install -r requirements.txt && set PRINTER_URL=http://localhost:3000/print/ && set DB_DEFAULT=postgres && python manage.py runserver 0.0.0.0:8000"
+start "DJANGO" cmd /k "cd /d %CD% && call .\venv\Scripts\activate && pip install -r requirements.txt && set PRINTER_URL=http://localhost:3000/print && set DB_DEFAULT=postgres && python manage.py runserver 0.0.0.0:8000"
 
 REM Navigate back to the main folder
 cd ..
